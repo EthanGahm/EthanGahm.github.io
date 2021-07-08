@@ -185,7 +185,15 @@
 })(jQuery);
 
 function copyEmail() {
-	let text = document.getElementById("email")
-	text.select();
+	tempInput = document.createElement("input");
+	tempInput.value = "EthanGahm@virginia.edu";
+	document.body.appendChild(tempInput)
+	tempInput.select();
 	document.execCommand("copy");
+	document.body.removeChild(tempInput)
+	alert("Email copied to clipboard!")
+}
+
+document.querySelector('#CopyEmail').onclick = function () {
+	copyEmail()
 }
